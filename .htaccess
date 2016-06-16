@@ -1,0 +1,10 @@
+#RewriteEngine on
+#RewriteCond $1 !^(index\.php|images|fonts|vendor|robots\.txt|woff|eot|ttf|svg|css|js)
+#RewriteRule ^(.*)$ /index.php/$1 [L]
+
+
+RewriteEngine on
+RewriteCond $1 !^(index\.php|public|\.txt|\.woff|\.ttf)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?$1
